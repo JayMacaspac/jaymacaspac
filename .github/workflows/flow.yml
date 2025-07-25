@@ -2,7 +2,7 @@ name: Auto Update README
 
 on:
   schedule:
-    - cron: '*/1 * * * *' # Every 6 hours
+    - cron: '*/5 * * * *' # Every 6 hours
   workflow_dispatch:
 
 jobs:
@@ -23,5 +23,5 @@ jobs:
           git config --global user.name "jaymacaspac"
           git config --global user.email "jaymacaspac08@gmail.com"
           git add README.md
-          git diff --cached --quiet || git commit -m "Update README"
+          git commit -m "Update README"
           git push
