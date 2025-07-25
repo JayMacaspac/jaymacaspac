@@ -15,17 +15,22 @@ jobs:
       # Example: Update README (replace with your script/command)
       - name: Run update script
         run: |
-          # Example: echo the current time into README
-          echo "Last updated: $(date -u)" > README.md
+          # Update the "Last updated:" line in README.md, or append if not present
+          if grep -q "Last updated:" README.md; then
+            sed -i "s|Last updated:.*|Last updated: $(date -u +"%Y-%m-%d %H:%M:%S") UTC|" README.md
+          else
+            echo -e "\nLast updated: $(date -u +"%Y-%m-%d %H:%M:%S") UTC" >> README.md
+          fi
+
 
       - name: Commit and push if changed
-        run: |
-          git config --global user.name "jaymacaspac"
-          git config --global user.email "jaymacaspac08@gmail.com"
-          
-          git add README.md
-          git commit -m "Update README"
-          git push
-
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.name "JayMacaspac"
+          git config --global user.email "jaymacaspac08@gmail.com"
+          git add README.md
+          if ! git diff --cached --quiet; then
+            git commit -m "Update README"
+            git push https://x-access-token:${GITHUB_TOKEN}@github.com/JayMacaspac/jaymacaspac.git HEAD:main
+          fi
