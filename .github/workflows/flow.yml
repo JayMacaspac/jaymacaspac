@@ -22,7 +22,10 @@ jobs:
         run: |
           git config --global user.name "jaymacaspac"
           git config --global user.email "jaymacaspac08@gmail.com"
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          
           git add README.md
           git commit -m "Update README"
           git push
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
