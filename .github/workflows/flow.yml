@@ -30,7 +30,6 @@ jobs:
           git config --global user.name "JayMacaspac"
           git config --global user.email "jaymacaspac08@gmail.com"
           git add README.md
-          if ! git diff --cached --quiet; then
-            git commit -m "Update README"
-            git push https://x-access-token:${GITHUB_TOKEN}@github.com/JayMacaspac/jaymacaspac.git HEAD:main
-          fi
+          git commit -m "Update README" || echo "No changes to commit"
+          git pull --rebase origin master  # <-- Add this line
+          git push
