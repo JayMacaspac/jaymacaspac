@@ -38,6 +38,9 @@ TypeScript Advanced Patterns • Next.js & modern SSR • Containerization with 
 [![GitHub Streak](https://streak-stats.demolab.com?user=JayMacaspac&theme=radical&card_height=195&card_width=490)](https://git.io/streak-stats)
 [![Jay's GitHub stats](https://github-readme-stats.vercel.app/api?username=JayMacaspac&theme=radical&card_width=490)](https://github.com/jaymacaspac/github-readme-stats)
 
+---
+
+[![trophy](https://github-profile-trophy.vercel.app/?username=jaymacaspac&theme=onedark)](https://github.com/ryo-ma/github-profile-trophy)
 
 ---
 
